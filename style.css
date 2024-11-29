@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: #f6f6f4;
+    font-family: Urbanist, sans-serif;
+    
+}
+.formations h2{
+    text-align: center;
+}
+.filiere{
+    width: 85%;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+.filiere #roadmapWeb, .filiere #web,
+.filiere #mobile, .filiere #roadmapMobile{
+    width: 45%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.filiere div img{
+    z-index: 10;
+    
+}
+.filiere div h3{
+    color: white;
+    font-size: 2rem;
+    z-index: 20;
+}
+#web, #mobile{
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/Web_developers.jfif");
+    overflow: hidden; 
+}
+#mobile{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/Mobile_developers.jfif");
+}
+.roadmapBtn{
+    background-color: white;
+    padding: 0.5rem 1.25rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    z-index: 10;
+    display: none;
+}
+
+
+#web::after, #mobile::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease;
+
+}
+
+#web:hover::after, #mobile:hover::after {
+    background-color: rgba(0, 91, 185, 0.8); 
+    animation: backColor 0.5s forwards cubic-bezier(.31,.29,.05,.96);
+
+}
+#web:hover *, #mobile:hover * {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+
+}
+#web:hover .roadmapBtn , #mobile:hover .roadmapBtn {
+    display: block;
+    transition: transform 0.3s ease;
+
+}
+@keyframes backColor{
+    form{
+        top: 100%;
+    }
+    to{
+        top: 0%;
+    }
+
+}
+
+
+#roadmapWeb {
+    position: relative;
+    border: 1px solid #D7D7D7;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#roadmapWeb p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    width: 40%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.icon {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.icon img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#html {
+    border-color: #E54D26;
+    left: 10%;
+    top: 13%;
+}
+
+#css {
+    border-color: #007CC2;
+    left: 30%;
+    top: 4%;
+}
+
+#javascript {
+    border-color: #E9CA32;
+    right: 30%;
+    top: 4%;
+}
+
+#php {
+    border-color: #5B54F2;
+    right: 10%;
+    top: 13%;
+}
+#softskills {
+    border-color: #DB3488;
+    right: 10%;
+    bottom: 13%;
+}
+#figma {
+    border-color: #09CE82;
+    right: 30%;
+    bottom: 4%;
+}
+#bootstrap {
+    border-color: #8612FB;
+    left: 30%;
+    bottom: 4%;
+}
+#react {
+    border-color: #61DAFB;
+    left: 77%;
+    top: 38%;
+}
+
+#wordpress {
+    border-color: #0F8CC3;
+    left: 10%;
+    bottom: 13%;
+}
+
+#sql {
+    border-color: #000;
+    right: 77%;
+    top: 38%;
+}
