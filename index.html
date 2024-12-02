@@ -15,9 +15,9 @@
                 <div id="web">
                     <img src="images/iMac.png" alt="">
                     <h3>Développement Web</h3>
-                    <input type="button" value="Roadmap" class="roadmapBtn" id="roadmapBtnWeb">
+                    <input type="button" value="Roadmap" class="roadmapBtn" id="roadmapBtnWeb" onclick="showRoadmap('web')">
                 </div>
-                <div id="roadmapWeb">
+                <div id="roadmapWeb" class="roadmap">
                     <div class="icon" id="html"><img src="images/html.jfif" alt=""></div>
                     <div class="icon" id="css"><img src="images/css.jfif" alt=""></div>
                     <div class="icon" id="javascript"><img src="images/js.jfif" alt=""></div>
@@ -31,16 +31,128 @@
 
                     <p>Le développement web consiste à créer et maintenir des sites ou applications accessibles via internet.</p>
                 </div>
-                <!-- <div id="mobile">
+                <div id="mobile">
                     <img src="images/Mobile.png" alt="">
                     <h3>Développement Mobile</h3>
-                    <input type="button" value="Roadmap" class="roadmapBtn" id="roadmapBtnMobile">
-                </div> -->
+                    <input type="button" value="Roadmap" class="roadmapBtn" id="roadmapBtnMobile" onclick="showRoadmap('mobile')">
+                </div>
+                <div id="roadmapMobile" class="roadmap">
+                    <div class="icon" id="php"><img src="images/php.jfif" alt=""></div>
+                    <div class="icon" id="kotlin"><img src="images/kotlin.jpg" alt=""></div>
+                    <div class="icon" id="laravel"><img src="images/laravel.webp" alt=""></div>
+                    <div class="icon" id="sql"><img src="images/sql.jpg" alt=""></div>
+                    <div class="icon" id="datastore"><img src="images/datastore.png" alt=""></div>
+                    <div class="icon" id="ux-ui"><img src="images/ux-ui.webp" alt=""></div>
+                    <div class="icon" id="api"><img src="images/api.webp" alt=""></div>
+                    <p>Le développement mobile désigne la création d'applications optimisées pour smartphones et tablettes, principalement sur Android et iOS.</p>
+                </div>
             </div>
                        
         </section>
+
+        <section id="solicodeChiffres">
+            <h2>Solicode en chiffres</h2>
+            <div id="chiffres">
+                <div class="chiffre">
+                    <img src="images/staff.png" alt="">
+                    <span class="num">12</span>
+                    <span class="title">Staff</span>
+                </div>
+                <div class="chiffre">
+                    <img src="images/places.png" alt="">
+                    <span class="num">120</span>
+                    <span class="title">Places</span>
+                </div>
+                <div class="chiffre">
+                    <img src="images/laureats.png" alt="">
+                    <span class="num">415</span>
+                    <span class="title">Lauréats</span>
+                </div>
+                <div class="chiffre">
+                    <img src="images/filieres.png" alt="">
+                    <span class="num">2</span>
+                    <span class="title">Filières</span>
+                </div>
+            </div>  
+        </section>
+
+        <section >
+            <h2>Nos temoignant</h2>
+            <div id="temoignages"> 
+                <div class="temoignage-container">
+                    <div class="temoignage">
+                        <img src="images/student1.png" alt="">
+                        <span class="name">REDA HAMMADA</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat, deleniti accusantium non obcaecati quos temporibus voluptatibus harum, dignissimos fuga blanditiis nisi asperiores?</p>
+                    </div>
+                    <div class="temoignage video">
+                        <iframe 
+                            width="240" 
+                            height="205" 
+                            src="https://www.youtube.com/embed/IY9JIKbqUUA" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <span class="name">STITOU NADA</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat.</p>
+                    </div>
+                    <div class="temoignage">
+                        <img src="images/student2.jpg" alt="">
+                        <span class="name">MOHAMMED HARBOULI</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat, deleniti accusantium non obcaecati quos temporibus voluptatibus harum, dignissimos fuga blanditiis nisi asperiores?</p>
+                    </div>
+                    <div class="temoignage video">
+                        <iframe 
+                            width="240" 
+                            height="205" 
+                            src="https://www.youtube.com/embed/IY9JIKbqUUA" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <span class="name">STITOU NADA</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat.</p>
+                    </div>
+                    <div class="temoignage">
+                        <img src="images/student1.png" alt="">
+                        <span class="name">REDA HAMMADA</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat, deleniti accusantium non obcaecati quos temporibus voluptatibus harum, dignissimos fuga blanditiis nisi asperiores?</p>
+                    </div>
+                    <div class="temoignage video">
+                        <iframe 
+                            width="240" 
+                            height="205" 
+                            src="https://www.youtube.com/embed/IY9JIKbqUUA" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <span class="name">STITOU NADA</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat.</p>
+                    </div>
+                    <div class="temoignage">
+                        <img src="images/student2.jpg" alt="">
+                        <span class="name">MOHAMMED HARBOULI</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat, deleniti accusantium non obcaecati quos temporibus voluptatibus harum, dignissimos fuga blanditiis nisi asperiores?</p>
+                    </div>
+                </div>
+                
+            </div>
+                
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div id="map"></div>
+        </section>
+        
     </main>
     <footer></footer>
     <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Google Maps</title>
+    <style>
+        #map {
+            height: 500px; /* Hauteur de la carte */
+            width: 100%; /* Largeur de la carte */
+        }
+    </style>
+</head>
+<body>
+    <h1>Localisation de Solicode Tanger</h1>
+    <div id="map"></div>
+
+    <!-- Inclure l'API Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            // Coordonnées de Solicode Tanger
+            const solicodeLocation = { lat: 35.763433, lng: -5.814358 };
+
+            // Création de la carte
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: solicodeLocation,
+                zoom: 15,
+            });
+
+            // Ajout d'un marqueur sur la carte
+            const marker = new google.maps.Marker({
+                position: solicodeLocation,
+                map: map,
+                title: "Solicode Tanger",
+            });
+
+            // Ajout d'une fenêtre d'information
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <div>
+                        <h3>Solicode Tanger</h3>
+                        <p>Tanger 90000</p>
+                        <a href="https://goo.gl/maps/EXAMPLE" target="_blank">Itinéraires</a>
+                    </div>
+                `,
+            });
+
+            // Affichage de la fenêtre d'information au clic sur le marqueur
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SUSE:wght@100..800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -5,29 +6,40 @@
     
 }
 body{
-    background-color: #f6f6f4;
-    font-family: Urbanist, sans-serif;
+    background-color: white;
+    /* background-color: #f6f6f4; */
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
     
 }
-.formations h2{
-    text-align: center;
-}
-.filiere{
+section{
     width: 85%;
-    height: 400px;
     margin: 0 auto;
+}
+section h2{
+    text-align: center;
+    margin: 5rem 0 3rem;
+}
+section > div:first-of-type {
     display: flex;
     justify-content: space-between;
+}
+/* Informations section */
+.filiere{
+    height: 400px;
 
 }
-.filiere #roadmapWeb, .filiere #web,
-.filiere #mobile, .filiere #roadmapMobile{
+.filiere #web, .filiere .roadmap, .filiere #mobile{
     width: 45%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.filiere #roadmapWeb, .filiere #roadmapMobile{
+    display: none;
 }
 .filiere div img{
     z-index: 10;
@@ -52,11 +64,15 @@ body{
     margin-top: 1rem;
     font-size: 1rem;
     border: none;
+    cursor: pointer;
     border-radius: 25px;
     z-index: 10;
     display: none;
 }
-
+.roadmapBtn:hover{
+    background-color: #FFE31A;
+    color: white;
+}
 
 #web::after, #mobile::after {
     content: '';
@@ -94,14 +110,14 @@ body{
 }
 
 
-#roadmapWeb {
+.roadmap{
     position: relative;
     border: 1px solid #D7D7D7;
     background-color: #f9f9f9;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#roadmapWeb p {
+.roadmap p {
     font-size: 1rem;
     color: #333;
     line-height: 1.5;
@@ -155,7 +171,7 @@ body{
     top: 4%;
 }
 
-#php {
+#roadmapWeb #php {
     border-color: #5B54F2;
     right: 10%;
     top: 13%;
@@ -192,3 +208,126 @@ body{
     right: 77%;
     top: 38%;
 }
+#kotlin {
+    border-color: #F78217;
+    left: 46%;
+    top: 6%;
+}
+#roadmapMobile #php {
+    border-color: #5B54F2;
+    right: 10%;
+    top: 20%;
+}
+#ux-ui {
+    border-color:#FECF02;
+    right: 10%;
+    top: 57%;
+}
+#datastore {
+    border-color: #0F8CC3;
+    left: 15%;
+    bottom: 9%;
+}
+
+#laravel {
+    border-color: #FA6F68;
+    left: 19%;
+    top: 9%;
+}
+#api {
+    border-color: #1A3344;
+    right: 40%;
+    bottom: 6%;
+}
+/* chiffres section */
+#chiffres {
+    justify-content: space-around;
+}
+.chiffre img{
+    width: 75px;
+}
+.chiffre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.num {
+    color: #FFE31A;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.title{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+/* temoignage section */
+
+
+
+.temVideo{
+    height: 355px;
+
+}
+
+
+
+
+
+.temoignage:hover {
+    transform: translateY(-10px);
+}
+
+
+
+#temoignages{
+    display: flex;
+    overflow: hidden;
+     position: relative;
+     width: 100%;
+
+}
+
+.temoignage-container {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 41px;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+
+.temoignage {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(30% - 41px);
+    box-sizing: border-box;
+    margin:10px auto;
+    text-align: center;
+    border: 1px solid #D7D7D7;
+    border-radius: 12px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Empêche les témoignages de rétrécir */
+}
+.temoignage > * {
+    width: 90%;
+    margin: 0.75rem auto;
+}
+.temoignage img{
+    height: 250px;
+    border-radius: 10px;
+}
+
+.video{
+    height: 350px;
+}
+
+
+#map {
+    width: 100%;
+    height: 500px;
+    margin: 20px 0;
+}
+
+
+
+
