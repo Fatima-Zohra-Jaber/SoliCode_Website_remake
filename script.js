@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mettre à jour la position du slider
    
     function updateSlidePosition() {
-        const slideWidth = slides[0].offsetWidth + 41; // Espace de 30px entre les slides
+        const slideWidth = slides[0].offsetWidth + 31; // Espace de 30px entre les slides
         const offset = -(currentIndex * slideWidth);
         container.style.transform = `translateX(${offset}px)`;
     }
@@ -109,32 +109,3 @@ document.addEventListener('DOMContentLoaded', function() {
     initSlider();
 });
 
-function initMap() {
-    const solicodeLocation = { lat: 35.763433, lng: -5.814358 };
-
-    const map = new google.maps.Map(document.getElementById("map"), {
-        center: solicodeLocation,
-        zoom: 15,
-    });
-
-    // Utiliser AdvancedMarkerElement
-    const marker = new google.maps.marker.AdvancedMarkerElement({
-        position: solicodeLocation,
-        map: map,
-        title: "Solicode Tanger",
-    });
-
-    const infoWindow = new google.maps.InfoWindow({
-        content: `
-            <div>
-                <h3>Solicode Tanger</h3>
-                <p>Tanger 90000</p>
-                <a href="https://goo.gl/maps/EXAMPLE" target="_blank">Itinéraires</a>
-            </div>
-        `,
-    });
-
-    marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-    });
-}

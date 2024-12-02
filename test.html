@@ -51,6 +51,11 @@
                 infoWindow.open(map, marker);
             });
         }
+
+        // Gestion des erreurs si la carte ne se charge pas
+        window.gm_authFailure = function() {
+            alert("Échec de l'authentification pour Google Maps API. Veuillez vérifier votre clé API.");
+        };
     </script>
 </body>
 </html>

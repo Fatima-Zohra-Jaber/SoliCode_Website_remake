@@ -40,6 +40,7 @@
                     <div class="icon" id="php"><img src="images/php.jfif" alt=""></div>
                     <div class="icon" id="kotlin"><img src="images/kotlin.jpg" alt=""></div>
                     <div class="icon" id="laravel"><img src="images/laravel.webp" alt=""></div>
+                    <div class="icon" id="android"><img src="images/Android_Studio.png" alt=""></div>
                     <div class="icon" id="sql"><img src="images/sql.jpg" alt=""></div>
                     <div class="icon" id="datastore"><img src="images/datastore.png" alt=""></div>
                     <div class="icon" id="ux-ui"><img src="images/ux-ui.webp" alt=""></div>
@@ -145,14 +146,53 @@
                 
         </section>
 
-        <section>
+        <section class="contact">
             <h2>Contact</h2>
-            <div id="map"></div>
+            <div class="contact-container">
+                <div class="maps-info">
+                    <div class="info">
+                            <address>
+                                <strong>Adresse: </strong>Bni Waryaghel 90000 Tanger, Maroc
+                            </address>
+                            <strong>Email: </strong> info@solicode.co<br>
+                            <strong>Portable: </strong> (212) 0634 39 05 05<br>
+                            <strong>Fixe: </strong> (212) 0539 30 88 85<br>
+                    </div>
+                
+                    <div id="maps">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14807.9593295849!2d-5.8253936!3d35.7462081!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b87c216892bc7%3A0x48bdf85995e9c186!2sSolicode%20Tanger!5e1!3m2!1sen!2sma!4v1733130625825!5m2!1sen!2sma" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>   
+                </div>
+                <form class="form">
+                    <p class="message">Signup now and get full access to our app. </p>
+                        <div class="flex">
+                            <label>
+                                <input required="" placeholder="" type="text" class="input">
+                                <span>Firstname</span>
+                            </label>
+
+                            <label>
+                                <input required="" placeholder="" type="text" class="input">
+                                <span>Lastname</span>
+                            </label>
+                        </div>  
+                            
+                    <label>
+                        <input required="" placeholder="" type="email" class="input">
+                        <span>Email</span>
+                    </label> 
+                        
+                    <label>
+                        <textarea name="" id="" cols="40" rows="10"></textarea>
+                        <span>Message</span>
+                    </label>
+                    <button class="submit">Submit</button>
+                </form>
+            </div>
         </section>
         
     </main>
     <footer></footer>
     <script src="script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </body>
 </html>

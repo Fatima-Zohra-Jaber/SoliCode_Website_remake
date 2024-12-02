@@ -8,7 +8,7 @@
 body{
     background-color: white;
     /* background-color: #f6f6f4; */
-    font-family: "Ubuntu Mono", monospace;
+    font-family: "Josefin Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     
@@ -70,7 +70,7 @@ section > div:first-of-type {
     display: none;
 }
 .roadmapBtn:hover{
-    background-color: #FFE31A;
+    background-color: rgba(253, 212, 19, 1);
     color: white;
 }
 
@@ -85,7 +85,7 @@ section > div:first-of-type {
 }
 
 #web:hover::after, #mobile:hover::after {
-    background-color: rgba(0, 91, 185, 0.8); 
+    background-color: hsla(247, 100%, 69%, 0.8); 
     animation: backColor 0.5s forwards cubic-bezier(.31,.29,.05,.96);
 
 }
@@ -121,7 +121,7 @@ section > div:first-of-type {
     font-size: 1rem;
     color: #333;
     line-height: 1.5;
-    width: 40%;
+    width: 45%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -210,34 +210,40 @@ section > div:first-of-type {
 }
 #kotlin {
     border-color: #F78217;
-    left: 46%;
+    left: 40%;
     top: 6%;
 }
 #roadmapMobile #php {
     border-color: #5B54F2;
-    right: 10%;
-    top: 20%;
+    right: 14%;
+    top: 12%;
 }
 #ux-ui {
     border-color:#FECF02;
-    right: 10%;
-    top: 57%;
+    left: 77%;
+    top: 38%;
 }
 #datastore {
     border-color: #0F8CC3;
-    left: 15%;
-    bottom: 9%;
+    left: 14%;
+    bottom: 13%;
 }
 
 #laravel {
     border-color: #FA6F68;
-    left: 19%;
-    top: 9%;
+    left: 14%;
+    top: 12%;
 }
 #api {
     border-color: #1A3344;
     right: 40%;
     bottom: 6%;
+}
+#android{
+    border-color: #4EB152;
+    right: 14%;
+    bottom: 13%;
+
 }
 /* chiffres section */
 #chiffres {
@@ -290,7 +296,7 @@ section > div:first-of-type {
 .temoignage-container {
     display: flex;
     /* justify-content: space-between; */
-    gap: 41px;
+    gap: 31px;
     align-items: center;
     transition: transform 0.5s ease;
 }
@@ -299,7 +305,7 @@ section > div:first-of-type {
 .temoignage {
     display: flex;
     flex-direction: column;
-    flex: 0 0 calc(30% - 41px);
+    flex: 0 0 calc(30% - 31px);
     box-sizing: border-box;
     margin:10px auto;
     text-align: center;
@@ -321,13 +327,91 @@ section > div:first-of-type {
     height: 350px;
 }
 
+/* Contact Section */ 
 
-#map {
-    width: 100%;
-    height: 500px;
-    margin: 20px 0;
+.contact-container{
+    display: flex;
+}
+#maps iframe{
+    margin: 1.5rem 0;
+    border-radius: 10px;
 }
 
 
 
 
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width:45%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+ 
+  
+ 
+  
+  
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .submit:hover {
+    background-color: rgb(56, 90, 194);
+  }
+ 
