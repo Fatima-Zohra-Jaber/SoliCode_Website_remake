@@ -29,83 +29,118 @@ roadmapMobile.addEventListener('mouseleave', function() {
     blockMobile.style.display = 'flex';
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+
+document.addEventListener('DOMContentLoaded', function () {
     const counters = document.querySelectorAll('.num');
-    
+    const duration = 1500; // Durée totale de l'animation en millisecondes
+
     counters.forEach(counter => {
         const target = parseInt(counter.textContent);
-        counter.textContent = '0';
-        
-        function updateCounter() {
-            
-            const currentValue = parseInt(counter.textContent);
-            const increment = Math.ceil(target / 50);
-            
-            if (currentValue < target) {
-                counter.textContent = currentValue + increment;
-                requestAnimationFrame(updateCounter);
+        const startTime = performance.now(); // Temps de départ
+
+        counter.textContent = '0'; // Initialisation
+
+        function updateCounter(currentTime) {
+            const elapsedTime = currentTime - startTime; // Temps écoulé
+            const progress = Math.min(elapsedTime / duration, 1); // Progrès entre 0 et 1
+
+            // Calcul de la valeur actuelle en fonction du progrès
+            const currentValue = Math.floor(progress * target);
+
+            counter.textContent = currentValue;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter); // Continuer tant que le progrès est < 1
             } else {
-                counter.textContent = target;
+                counter.textContent = target; // S'assurer que la valeur finale est exacte
             }
         }
-        
-        updateCounter();
+
+        requestAnimationFrame(updateCounter); // Démarrer l'animation
     });
 });
-document.addEventListener('DOMContentLoaded', function() {
+
+
+document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('.temoignage-container');
-    const slides = document.querySelectorAll('.temoignage');
+    const slides = Array.from(document.querySelectorAll('.temoignage'));
     const totalSlides = slides.length;
     let currentIndex = 0;
+    let slideInterval;
 
     // Fonction pour cloner les slides pour créer un slider infini
     function setupInfiniteSlider() {
-        // Cloner les premiers et derniers slides pour créer une boucle
         const firstSlide = slides[0].cloneNode(true);
-        const secondSlide = slides[1].cloneNode(true);
         const lastSlide = slides[totalSlides - 1].cloneNode(true);
-        
+
         // Ajouter les clones
-        container.appendChild(firstSlide);
-        container.appendChild(secondSlide);
-        container.insertBefore(lastSlide, slides[0]);
+        container.appendChild(firstSlide); // Ajouter à la fin
+        container.insertBefore(lastSlide, slides[0]); // Ajouter au début
     }
 
     // Mettre à jour la position du slider
-   
     function updateSlidePosition() {
-        const slideWidth = slides[0].offsetWidth + 31; // Espace de 30px entre les slides
+        const slideWidth = slides[0].offsetWidth + 35; // Inclut l'espace entre les slides
         const offset = -(currentIndex * slideWidth);
         container.style.transform = `translateX(${offset}px)`;
     }
+
+    // Réinitialiser la position pour créer l'effet de boucle
+    function resetSlidePosition() {
+        const slideWidth = slides[0].offsetWidth + 20;
+
+        if (currentIndex === totalSlides) {
+            container.style.transition = 'none'; // Désactiver la transition
+            currentIndex = 0; // Revenir au premier slide réel
+            const offset = -(currentIndex * slideWidth);
+            container.style.transform = `translateX(${offset}px)`;
+        } else if (currentIndex === -1) {
+            container.style.transition = 'none'; // Désactiver la transition
+            currentIndex = totalSlides - 1; // Revenir au dernier slide réel
+            const offset = -(currentIndex * slideWidth);
+            container.style.transform = `translateX(${offset}px)`;
+        }
+    }
+
     // Fonction de slide automatique
     function autoSlide() {
         currentIndex++;
-
-        // Réinitialiser si on arrive à la fin
-        if (currentIndex >= totalSlides) {
-            currentIndex = 0;
-            container.style.transition = 'none'; // Pas de transition lors du reset
-            updateSlidePosition(); // Mettre à jour la position immédiatement
-            setTimeout(() => {
-                container.style.transition = 'transform 0.5s ease'; // Réactiver la transition
-            }, 10); // Petite pause pour que la transition soit réactivée
-        } else {
-            container.style.transition = 'transform 0.5s ease';
-        }
-
+        container.style.transition = 'transform 0.5s ease';
         updateSlidePosition();
+
+        // Vérifier si on atteint une limite et réinitialiser si nécessaire
+        setTimeout(() => resetSlidePosition(), 500);
+    }
+
+    // Démarrer le slider
+    function startSlider() {
+        slideInterval = setInterval(autoSlide, 3000);
+    }
+
+    // Arrêter le slider
+    function stopSlider() {
+        clearInterval(slideInterval);
     }
 
     // Initialisation du slider
     function initSlider() {
         setupInfiniteSlider();
-        updateSlidePosition(); // Initialiser la position
-        setInterval(autoSlide, 3000); // Démarrer le slider automatique
+        updateSlidePosition();
+
+        // Démarrer le slider automatique
+        startSlider();
+
+        // Ajouter les événements hover
+        container.addEventListener('mouseover', stopSlider);
+        container.addEventListener('mouseout', startSlider);
+
+        // Ajuster la position initiale après le clonage
+        currentIndex = 0;
+        container.style.transition = 'none';
+        updateSlidePosition();
     }
 
-    // Initialiser le slider
     initSlider();
 });
+
 

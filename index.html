@@ -5,11 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header></header>
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="images/LOGO.png" alt="logo">
+            <ul class="nav-links">
+                <li><a href="">Accueil</a></li>
+                <li><a href="#tab">A propos</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#event">Evénements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <canvas id="canvas1"></canvas>
+    
+    
+    
+        <div class="canvas-text">
+           <h3>Passionné par les technologies digitales ?</h3>
+            <p>Si vous avez entre 18 et 35 ans et que la motivation vous anime,
+            préparez-vous à transformer votre passion en expertise !</p>
+        </div>
+    
+        <div class="partners-bar">
+            <div class="bar-content">
+                
+            </div>
+        </div>
+        
+    </header>
     <main>
-        <section class="formations">
+        <div class="tabs" id="tab">
+            <div class="container">
+                <div class="tab_box">
+                    <button class="tab_btn active">A Propos </button>
+                    <button class="tab_btn">Nos Valeures</button>
+                    <button class="tab_btn">Nos Formateurs</button>
+                    <div class="line"></div>
+                </div>
+                <div class="content_box">
+                    <div class="content active">
+                        <div class="apropos-content">
+                            <img id="active-img" src="images/solicode picture.png" alt="">
+                            <p>
+                                SOLICODE est un centre de formation solidaire et inclusif, destiné aux jeunes motivés et intéressés par les métiers du Développement Web et Mobile.
+                                L’apprenant à SOLICODE est considéré comme l’acteur principal de son parcours d’apprentissage. Il construit ses connaissances à travers la réalisation de projets individuels ou en groupe,
+                                inspirés du monde professionnel, afin de faciliter son insertion sur le marché de l’emploi. La formation chez SOLICODE couvre plusieurs domaines : compétences techniques, soft skills, entrepreneuriat et gestion de projet.
+                                À l'issue de cette formation,les apprenants recevront une double certification délivrée par l'OFPPT.
+                            </p>
+                        </div>
+                       
+                    </div>
+        
+                    <div class="content">
+                        <div class="valuesClass">
+                        <div class="values">
+                            <!-- icon -->
+                            <h3>Formation inclusive</h3>
+                            <p>
+                                Quel que soit votre niveau d’étude,
+                                 la passion pour la technologie et l’envie d’apprentissage sont les seuls critères pour nous rejoindre.
+                            </p>
+                        </div>
+                        <div class="values">
+                            <h3>Méthodologie innovante</h3>
+                            <p>
+                                Le centre SOLICODE est doté des moyens pédagogiques et techniques innovants favorisant l’apprentissage et la pratique des connaissances dans les meilleures conditions.
+                                 La formation offerte à SOLICODE est axée sur les technologies digitales les plus demandées au marché du travail.
+                            </p>
+                        </div>
+                        <div class="values">
+                            <h3>Pédagogie active</h3>
+                            <p>
+                                SOLICODE adopte une pédagogie active et par projets où l’apprenant se trouve dans des situations réelles ce qui garantit une insertion professionnelle. 
+                                L’apprenant est accompagné par des formateurs référants experts durant toute la période de formation.
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="content">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Dolorum sunt, nulla ex reiciendis, quod autem quo repellat,
+                            explicabo atque quae aspernatur 
+                            tempora suscipit similique reprehenderit saepe quos repellendus vero corporis?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <section class="formations" id="formation">
             <h2>Formations</h2>
             <div class="filiere">
                 <div id="web">
@@ -51,6 +140,57 @@
                        
         </section>
 
+        <div class="events" id="event">
+            <h2>Evénements</h2>
+            <div class="wrapper">
+                <div class="events-container">
+                    <input type="radio" name="slide" id="c1" checked>
+                    <label for="c1" class="card">
+                        <div class="row">
+                            <div class="description">
+                                <h4>Hackathon</h4>
+                                <p>
+                                    un événement de codage social qui rassemble des programmeurs informatiques pour améliorer ou créer un nouveau logiciels</p>
+                                
+                            </div>
+                            
+                        </div>
+        
+                    </label>
+        
+                    <input type="radio" name="slide" id="c2" checked>
+                    <label for="c2" class="card">
+                        <div class="row">
+                            <div class="description">
+                                <h4>IT-WAVE</h4>
+                                <p> une exploration à travers le monde de l'innovation et de la technologie, où l'art et les idées prennent vie.</p>
+                                
+                            </div>
+                            
+                        </div>
+        
+                    </label>
+        
+                    <input type="radio" name="slide" id="c3" checked>
+                    <label for="c3" class="card">
+                        <div class="row">
+                            <div class="description">
+                                <h4>formations professionnelles</h4>
+                                <p>Être compétent dans le monde professionnel nécessite une approche particulière. Pour approfondir le savoir-être et les compétences comportementales</p>
+                                
+                            </div>
+                            
+                        </div>
+        
+                    </label>
+        
+                </div>
+        
+        
+            </div>
+        
+        </div>
+
         <section id="solicodeChiffres">
             <h2>Solicode en chiffres</h2>
             <div id="chiffres">
@@ -77,37 +217,39 @@
             </div>  
         </section>
 
-        <section >
+        <section id="temoignages-section">
             <h2>Nos temoignant</h2>
             <div id="temoignages"> 
-                <div class="temoignage-container">
+                <div class="temoignage-container" >
                     <div class="temoignage">
                         <img src="images/student1.png" alt="">
                         <span class="name">REDA HAMMADA</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat, deleniti accusantium non obcaecati quos temporibus voluptatibus harum, dignissimos fuga blanditiis nisi asperiores?</p>
+                        <p>Dans ma propre expérience, cette formation a été un véritable tournant. J'ai acquis des compétences techniques solides qui m'ont permis de relever des défis professionnels importants. Ce parcours m'a également aidé à renforcer ma confiance et à développer ma capacité à travailler efficacement en équipe. Grâce à un environnement d'apprentissage bienveillant et stimulant, j'ai pu progresser à mon rythme et atteindre des objectifs qui me semblaient inaccessibles au départ.
+                        </p>
                     </div>
                     <div class="temoignage video">
                         <iframe 
-                            width="240" 
-                            height="205" 
-                            src="https://www.youtube.com/embed/IY9JIKbqUUA" 
+                            width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/zhQKHao2Fi0" 
                             title="YouTube video player" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <span class="name">STITOU NADA</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat.</p>
+                        <span class="name">EL MAMOUN AYOUB</span>
+                        <p>Expérience partagée à SoliCode Tanger...</p>
                     </div>
                     <div class="temoignage">
                         <img src="images/student2.jpg" alt="">
                         <span class="name">MOHAMMED HARBOULI</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat, deleniti accusantium non obcaecati quos temporibus voluptatibus harum, dignissimos fuga blanditiis nisi asperiores?</p>
+                        <p>Dans ma propre expérience, cette formation a été un véritable tournant. J'ai acquis des compétences techniques solides qui m'ont permis de relever des défis professionnels importants. Ce parcours m'a également aidé à renforcer ma confiance et à développer ma capacité à travailler efficacement en équipe. Grâce à un environnement d'apprentissage bienveillant et stimulant, j'ai pu progresser à mon rythme et atteindre des objectifs qui me semblaient inaccessibles au départ.
+                        </p>
                     </div>
                     <div class="temoignage video">
                         <iframe 
-                            width="240" 
-                            height="205" 
+                            width="560" 
+                            height="315"  
                             src="https://www.youtube.com/embed/IY9JIKbqUUA" 
                             title="YouTube video player" 
                             frameborder="0" 
@@ -115,48 +257,43 @@
                             allowfullscreen>
                         </iframe>
                         <span class="name">STITOU NADA</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat.</p>
+                        <p>Expérience partagée à SoliCode Tanger...</p>
                     </div>
+                    
                     <div class="temoignage">
-                        <img src="images/student1.png" alt="">
-                        <span class="name">REDA HAMMADA</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat, deleniti accusantium non obcaecati quos temporibus voluptatibus harum, dignissimos fuga blanditiis nisi asperiores?</p>
+                        <img src="images/student3.png" alt="">
+                        <span class="name">MOHAMMED YAHYA</span>
+                        <p>Cette formation a marqué un véritable tournant dans ma carrière. Elle m'a permis d'acquérir des compétences techniques solides, essentielles pour relever des défis professionnels majeurs. De plus, ce parcours m'a aidé à renforcer ma confiance en moi et à développer mes capacités à travailler de manière collaborative et efficace. Grâce à un environnement d'apprentissage bienveillant et motivant, j'ai pu avancer à mon propre rythme et atteindre des objectifs que je pensais initialement hors de portée.</p>
                     </div>
                     <div class="temoignage video">
                         <iframe 
-                            width="240" 
-                            height="205" 
-                            src="https://www.youtube.com/embed/IY9JIKbqUUA" 
+                            width="560" 
+                            height="315"  
+                            src="https://www.youtube.com/embed/h31RbhbDIyw?si=S55-Y1y6jYdVV2i1" 
                             title="YouTube video player" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <span class="name">STITOU NADA</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat.</p>
+                        <span class="name">OUAFAE ZOUINI</span>
+                        <p>Expérience partagée à SoliCode Tanger...</p>
                     </div>
-                    <div class="temoignage">
-                        <img src="images/student2.jpg" alt="">
-                        <span class="name">MOHAMMED HARBOULI</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis a fugiat minima dolorum saepe vero quia quaerat, deleniti accusantium non obcaecati quos temporibus voluptatibus harum, dignissimos fuga blanditiis nisi asperiores?</p>
-                    </div>
-                </div>
+                    
+                  
                 
             </div>
                 
         </section>
 
-        <section class="contact">
+        <section class="contact" id="contact">
             <h2>Contact</h2>
             <div class="contact-container">
                 <div class="maps-info">
                     <div class="info">
-                            <address>
-                                <strong>Adresse: </strong>Bni Waryaghel 90000 Tanger, Maroc
-                            </address>
-                            <strong>Email: </strong> info@solicode.co<br>
-                            <strong>Portable: </strong> (212) 0634 39 05 05<br>
-                            <strong>Fixe: </strong> (212) 0539 30 88 85<br>
+                        <span><i class="fa-solid fa-location-dot"></i>Bni Waryaghel 90000 Tanger, Maroc </span>
+                        <span><i class="fa-solid fa-envelope"></i>info@solicode.co</span>
+                        <span><i class="fa-solid fa-mobile-screen-button"></i>(212) 0634 39 05 05</span>
+                        <span><i class="fa-solid fa-phone"></i>(212) 0539 30 88 85</span>
                     </div>
                 
                     <div id="maps">
@@ -164,35 +301,29 @@
                     </div>   
                 </div>
                 <form class="form">
-                    <p class="message">Signup now and get full access to our app. </p>
-                        <div class="flex">
-                            <label>
-                                <input required="" placeholder="" type="text" class="input">
-                                <span>Firstname</span>
-                            </label>
-
-                            <label>
-                                <input required="" placeholder="" type="text" class="input">
-                                <span>Lastname</span>
-                            </label>
-                        </div>  
-                            
-                    <label>
-                        <input required="" placeholder="" type="email" class="input">
-                        <span>Email</span>
-                    </label> 
+                    <div class="flex">
+                        <input  placeholder="Firstname" type="text" class="input">
+                        <input  placeholder="Lastname" type="text" class="input">
+                    </div>  
                         
-                    <label>
-                        <textarea name="" id="" cols="40" rows="10"></textarea>
-                        <span>Message</span>
-                    </label>
+                    <input  placeholder="Email" type="email" class="input">
+                    
+                    <textarea name="" id="" cols="40" rows="10" class="input" placeholder="Message"></textarea>
+                        
                     <button class="submit">Submit</button>
                 </form>
             </div>
         </section>
-        
     </main>
-    <footer></footer>
+    <!-- <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img class="footer-logo-img" src="/images/LOGO.png" alt="logo">
+            </div>
+        </div>
+    <p>© 2024 <span id="yellow-txt">Solicode</span>. All rights are reserved.</p>
+</footer> -->
     <script src="script.js"></script>
+    <script src="script2.js"></script>
 </body>
 </html>
