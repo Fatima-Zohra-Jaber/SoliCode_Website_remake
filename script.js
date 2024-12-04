@@ -32,31 +32,30 @@ roadmapMobile.addEventListener('mouseleave', function() {
 
 document.addEventListener('DOMContentLoaded', function () {
     const counters = document.querySelectorAll('.num');
-    const duration = 1500; // Durée totale de l'animation en millisecondes
+    const duration = 1500; 
 
     counters.forEach(counter => {
         const target = parseInt(counter.textContent);
-        const startTime = performance.now(); // Temps de départ
+        const startTime = performance.now(); 
 
-        counter.textContent = '0'; // Initialisation
+        counter.textContent = '0';
 
         function updateCounter(currentTime) {
-            const elapsedTime = currentTime - startTime; // Temps écoulé
-            const progress = Math.min(elapsedTime / duration, 1); // Progrès entre 0 et 1
+            const elapsedTime = currentTime - startTime; 
+            const progress = Math.min(elapsedTime / duration, 1); 
 
-            // Calcul de la valeur actuelle en fonction du progrès
             const currentValue = Math.floor(progress * target);
 
             counter.textContent = currentValue;
 
             if (progress < 1) {
-                requestAnimationFrame(updateCounter); // Continuer tant que le progrès est < 1
+                requestAnimationFrame(updateCounter); 
             } else {
-                counter.textContent = target; // S'assurer que la valeur finale est exacte
+                counter.textContent = target;
             }
         }
 
-        requestAnimationFrame(updateCounter); // Démarrer l'animation
+        requestAnimationFrame(updateCounter);
     });
 });
 
