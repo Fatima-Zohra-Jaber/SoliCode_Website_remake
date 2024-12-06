@@ -84,8 +84,8 @@ class Particles {
         }
 
         // Move particle
-        this.x += this.directionX;
-        this.y += this.directionY;
+        this.x += this.directionX * 0.3;
+        this.y += this.directionY * 0.3;
 
         // Draw particle
         this.draw();
@@ -157,7 +157,7 @@ function drawBackground() {
         ctx.drawImage(backgroundImage, x, y, scaledWidth, scaledHeight);
 
         // Dessiner un rectangle noir transparent par-dessus
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.62)'; 
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.4)'; 
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 }
@@ -224,3 +224,13 @@ tabs.forEach((tab,index) =>{
 
 
 
+// navbar changes on scroll 
+
+const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) { 
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
